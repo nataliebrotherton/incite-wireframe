@@ -22,5 +22,4 @@ def get_json_file(filename):
     filename = pathlib.Path(wireframe.app.config['DATA_DIR'])/filename
     with open(filename, 'r') as file:
         data = json.load(file)
-        print(data)
     return data
