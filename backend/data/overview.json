@@ -1,0 +1,27 @@
+{
+    "client_hours": {
+        "label": "Top Client",
+        "value": "Takata",
+        "hours": 5311
+    },
+    "client_project_hours": {
+        "label": "Top Project",
+        "value": "GDIA Engagement",
+        "hours": 2830
+    },
+    "employee_billable_hours": {
+        "label": "Most billable",
+        "value": "Aaron M.",
+        "hours": 3414
+    },
+    "month_pto_hours": {
+        "label": "Most time off",
+        "value": "December 2016",
+        "hours": 440
+    },
+    "month_billable_hours": {
+        "label": "Most profitable",
+        "value": "April 2016",
+        "hours": 1497
+    }
+}
