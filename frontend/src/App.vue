@@ -1,48 +1,19 @@
 <script lang="ts">
-import Card from './components/Card.vue';
+import GraphView from './components/GraphView.vue';
 import Overview from './components/Overview.vue';
 
 export default {
-  data() {
-    return {
-      graphNames: [
-        'client_hours',
-        'client_project_hours',
-        'employee_billable_hours',
-        'month_pto_hours',
-        'month_billable_hours'
-      ]
-    }
-  },
-  methods: {
-    isDropdown: (graph: string) => {
-      return graph == 'client_project_hours';
-    }
-  },
   components: {
-    Card,
+    GraphView,
     Overview
   }
 }
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-  </header>
-
   <main>
-    <!-- <TheWelcome /> -->
-    <div class="container" id="overview" v-for="graph in graphNames">
-      <OverviewCard :graphName="graph" />
-    </div>
-
     <Overview />
-
-    <div class="container" id="graph" v-for="graph in graphNames">
-      <Card :graphName="graph" :renderDropdown="isDropdown(graph)" />
-    </div>
+    <GraphView />
   </main>
 </template>
 

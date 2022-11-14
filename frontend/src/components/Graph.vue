@@ -30,7 +30,16 @@ export default {
 </script>
 
 <template>
-    here is the graph
-    {{graphName}}
-    {{renderedGraph}}
+    <div :id="graphName" class="graph">
+        <p class="label">{{ graphData['label'] }}</p>
+        {{graphName}}
+        {{renderedGraph}}
+    </div>
+
 </template>
+
+<style>
+    .graph .label {
+        font-size: 32;
+    }
+</style>
