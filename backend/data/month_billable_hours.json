@@ -1,5 +1,6 @@
 {
     "label": "Billable hours trend",
+    "chart_type": "line"
     "data": [
         {"month":"1/2016","hours":1381.5},
         {"month":"2/2016","hours":1270.5},

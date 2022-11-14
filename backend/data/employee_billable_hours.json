@@ -1,5 +1,6 @@
 {
     "label": "Most billable employees",
+    "chart_type": "bar",
     "data": [
         {"full_name":"Aaron M.","hours":3414.0},
         {"full_name":"Vasanth N.","hours":3130.5},

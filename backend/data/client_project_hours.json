@@ -1,5 +1,6 @@
 {
     "label": "Billable hours by project",
+    "chart_type": "pie",
     "data": [
         {"client":"Ford Motor Company","list_project_hours":[{"project":"GDIA Engagement","hours":2829.75},{"project":"Advanced Engineering PoC","hours":2.0}]},
         {"client":"Usana","list_project_hours":[{"project":"Business Objects Migration","hours":2587.5},{"project":"Senior Technical Architect Resource","hours":980.25},{"project":"Initial Application Set Build","hours":426.75},{"project":"Program Management Mentoring","hours":112.0},{"project":"Template Design & Development","hours":108.5},{"project":"Executive App Discovery","hours":89.0},{"project":"Sales and Marketing Discovery","hours":22.25},{"project":"Initial Technical Consult","hours":13.0}]},

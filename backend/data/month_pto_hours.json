@@ -1,5 +1,6 @@
 {
     "label": "PTO/Holiday Trend",
+    "chart_type": "line",
     "data": [
         {"month":"1/2016","hours":150.0},
         {"month":"2/2016","hours":85.25},

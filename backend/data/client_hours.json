@@ -1,5 +1,6 @@
 {
     "label" : "Billable hours by client",
+    "chart_type" : "bar",
     "data" : [
         {"client":"Takata","hours":5311.25},
         {"client":"Usana","hours":4339.25},
