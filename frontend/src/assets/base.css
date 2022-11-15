@@ -20,17 +20,17 @@
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
 
-  --background-light-gray: '#F5F5F5';
+  --background-light-gray: #F5F5F5;
 
-  --text-title-1: '#262D33';
-  --text-title-2: '#414141';
-  --text-title-3: '#7E7C7C';
+  --text-title-1: #262D33;
+  --text-title-2: #414141;
+  --text-title-3: #7E7C7C;
 
-  --text-label-1: '#666666';
+  --text-label-1: #666666;
 
-  --card-border: '#E8E8E8';
+  --card-border: #E8E8E8;
 
-  --overview-text-highlight: '#51A2C7';
+  --overview-text-highlight: #51A2C7;
 }
 
 /* semantic color variables for this project */
@@ -68,7 +68,6 @@
   box-sizing: border-box;
   margin: 0;
   position: relative;
-  font-weight: normal;
 }
 
 body {
