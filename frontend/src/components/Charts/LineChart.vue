@@ -7,7 +7,15 @@ ChartJS.register(Title, Tooltip, Legend, CategoryScale, LinearScale, PointElemen
 
 export default {
     props: {
-        graphData: GraphData
+        graphData: GraphData,
+        width: {
+            type: Number,
+            default: 500
+        },
+        height: {
+            type: Number,
+            default: 300
+        }
     },
     components: {
         Line
@@ -21,5 +29,7 @@ export default {
         v-if="graphData?.isLoaded()"
         :chart-data="graphData?.getData()"
         :chart-id="graphData?.getName()"
+        :width="width"
+        :height="height"
     ></Line>
 </template>
