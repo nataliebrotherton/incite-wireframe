@@ -1,4 +1,5 @@
 <script lang="ts">
+// Controls rendering graph sections and cards
 import Graph from './Graph.vue'
 
 export default {
@@ -35,37 +36,36 @@ export default {
 </script>
 
 <template>
-
     <div class="graph-section" v-for="section in graphDisplayData">
         <h3 class="title">{{section["title"]}}</h3>
-        <div class="card" v-for="graphName in section.graphNames">
-            
-            <Graph :graphName="graphName" :render-dropdown="isDropdown(graphName)" />
+        <div class="graph-cards-container">
+            <div class="card" v-for="graphName in section.graphNames">
+                <Graph :graphName="graphName" :render-dropdown="isDropdown(graphName)" />
+            </div>
         </div>
-    </div>
 
-    <!-- <div class="graph-section" id="client">
-        <h3>Client Data</h3>
-        <div class="card" v-for="data in graphDisplayData["client"]">
-            <Graph :graphName="data" :render-dropdown="isDropdown(data)" />
-        </div>
     </div>
-
-    <div class="graph-section" id="timelog">
-        <h3>Timelog Data</h3>
-        <div class="card" v-for="data in graphDisplayData">
-            <Graph :graphName="data" :render-dropdown="isDropdown(data)" />
-        </div>
-    </div> -->
 </template>
 
 <style scoped lang="scss">
 
 .graph-section {
-    display: flex;
+
+    .graph-cards-container {
+        display: flex;
+        flex-direction: row;
+    }
     .card {
         margin-right: 10px;
         padding: 20px;
+
+        overflow-y: scroll;
+        width: 600px;
+        height: 400px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .title {
