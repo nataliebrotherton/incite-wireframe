@@ -1,4 +1,11 @@
 <script lang="ts">
+// Controls rendering graphs
+import GraphData from './GraphData';
+
+import BarChart from './Charts/BarChart.vue';
+import LineChart from './Charts/LineChart.vue';
+import PieChart from './Charts/PieChart.vue';
+
 export default {
     props: {
         graphName: String,
@@ -7,39 +14,39 @@ export default {
     data() {
         return {
             label: '',
-            graphData: [],
-            renderDropdown: false
+            graphData: new GraphData(this.graphName)
         }
     },
-    created: function() { this.getData(); },
-    computed: {
-        renderedGraph() {
-            // return graph
-            return 'graph data';
-        }
-    },
-    methods: {
-        async getData() {
-            fetch(import.meta.env.VITE_API_URL + this.graphName)
-            .then((response) => { return response.json() })
-            .then((data) => { this.graphData = data })
-            .catch((err) => console.error(err))
-        }
+    created: function() { this.graphData.getAPIData(); },
+    components: {
+        BarChart,
+        LineChart,
+        PieChart
     }
 }
 </script>
 
 <template>
     <div :id="graphName" class="graph">
-        <p class="label">{{ graphData['label'] }}</p>
+        <p class="label">{{ graphData.getLabel() }}</p>
         {{graphName}}
-        {{renderedGraph}}
+        <BarChart v-if="graphData.isBar()" :graph-data="graphData" />
+        <LineChart v-else-if="graphData.isLine()" :graph-data="graphData" />
+        <PieChart v-else-if="graphData.isPie()" :graph-data="graphData" />
     </div>
 
 </template>
 
-<style>
-    .graph .label {
-        font-size: 32;
+<style lang="scss">
+    .graph {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .label {
+            font-size: 32;
+        }
     }
 </style>
