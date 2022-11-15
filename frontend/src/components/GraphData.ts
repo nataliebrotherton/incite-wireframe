@@ -1,3 +1,6 @@
+import chroma from 'chroma-js';
+import { Chart } from 'chart.js';
+
 class GraphData {
     name: any;
     data: object;
@@ -19,22 +22,20 @@ class GraphData {
         this.data = {
             axis: 'y',
             datasets: [{
-                data: data['data']
+                data: data['data'],
             }],
-            labels: data['labels']
+            labels: data['labels'],
+            
         };
-        this.type = data['chart_type'];
-        this.label = data['label'];
 
-        console.log(this.data);
-        // // get xy keys
-        // let data_item = data['data'][0];
-        // let keys = Object.keys(data_item);
-        // this.keys = {
-        //     xAxisKeys: keys[0],
-        //     yAxisKeys: keys[1]
-        // };
-        // console.log(this.keys)
+        this.type = data['chart_type'];
+        
+        // generate gradient bars for bar graphs
+        if (this.type === 'bar') {
+            this.data['datasets'][0]['backgroundColor'] = this.generateChartColors(data['data']);
+        }
+
+        this.label = data['label'];
 
     }
 
@@ -82,6 +83,55 @@ class GraphData {
 
     getAxisKeys() {
         return this.keys;
+    }
+
+    getColorScheme() {
+        let style = getComputedStyle(document.body);
+        let start_var = '';
+        let end_var = '';
+
+        if (this.name.includes('client')) {
+            // graphs in client section use cool colors
+            start_var = '--scheme-cool-dark';
+            end_var = '--scheme-cool-light'; 
+        } else {
+            start_var = '--scheme-warm-dark';
+            end_var = '--scheme-warm-light';
+        }
+
+        let start = style.getPropertyValue(start_var);
+        let end = style.getPropertyValue(end_var);
+        start = start.substring(1);
+        end = end.substring(1);
+
+        return [start, end];
+
+    }
+
+    generateChartColors(data: any) {
+        let color_scheme = this.getColorScheme();
+
+        return chroma.scale(color_scheme).gamma(0.5).colors(data.length);
+        
+    }
+
+    /**
+     * @see https://www.chartjs.org/docs/latest/samples/advanced/linear-gradient.html
+     */
+    generateLineGradient(ctx: any, width: number, height: number) {
+        let gradient = ctx.createLinearGradient(0, 0, 0, height);
+
+        let color_scheme = this.getColorScheme();
+        let scale = chroma.scale(color_scheme).colors(3);
+
+        console.log(scale);
+
+        gradient.addColorStop(0, color_scheme[0]);
+        // gradient.addColorStop(0.5, scale[1])
+        gradient.addColorStop(0.5, color_scheme[1]);
+        gradient.addColorStop(1, color_scheme[1]);
+
+        return gradient;
     }
 };
 

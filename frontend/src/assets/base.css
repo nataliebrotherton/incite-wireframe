@@ -13,6 +13,13 @@
   --overview-text-highlight: #51A2C7;
 
   --font-weight: 600;
+
+  /* color scales for styling charts */
+  --scheme-cool-dark: #3e1d72;
+  --scheme-cool-light: #6bd3dd;
+  
+  --scheme-warm-dark: #c73c24;
+  --scheme-warm-light: #fcb504;
 }
 
 /* semantic color variables for this project */
