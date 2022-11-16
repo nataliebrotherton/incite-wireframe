@@ -20,6 +20,8 @@
   
   --scheme-warm-dark: #c73c24;
   --scheme-warm-light: #fcb504;
+
+  --system-font: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* semantic color variables for this project */
@@ -42,10 +44,11 @@ body {
   background: var(--background-light-gray);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--system-font);
   font-size: 15px;
   font-weight: var(--font-weight);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
