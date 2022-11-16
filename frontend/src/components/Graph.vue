@@ -25,7 +25,7 @@ const setChartDefaults = function() {
 
     // hide legend
     Chart.defaults.plugins.legend.display = false;
-    console.log(Chart.defaults);
+
 };
 
 setChartDefaults();
@@ -38,10 +38,25 @@ export default {
     data() {
         return {
             label: '',
-            graphData: new GraphData(this.graphName)
+            graphData: new GraphData(this.graphName),
+            clientData: []
         }
     },
-    created: function() { this.graphData.getAPIData(); },
+    methods: {
+        getClients() {
+            return this.graphData.getClients();
+        }
+    },
+    created: function() { 
+        this.graphData.getAPIData()
+        .then(() => {
+            if (this.renderDropdown) {
+                this.clientData = this.getClients();
+            }
+        })
+
+    },
+
     components: {
         BarChart,
         LineChart,
@@ -51,6 +66,14 @@ export default {
 </script>
 
 <template>
+    <div class="dropdown" v-if="renderDropdown">
+        <label for="client">View projects by client</label>       
+        <select name="client" id="client">
+            <option v-for="client in clientData" :label="client">
+                {{ client }}
+            </option>
+        </select>
+    </div>
     <div :id="graphName" class="graph">
         <p class="label">{{ graphData.getLabel() }}</p>
         <BarChart v-if="graphData.isBar()" :graph-data="graphData" />

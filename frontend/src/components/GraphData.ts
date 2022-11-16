@@ -18,7 +18,7 @@ class GraphData {
         this.keys = {};
     }
 
-    init(data: object) {
+    async init(data: object) {
         this.data = {
             axis: 'y',
             datasets: [{
@@ -29,7 +29,7 @@ class GraphData {
         };
 
         this.type = data['chart_type'];
-        
+
         // generate gradient bars for bar graphs
         if (this.type === 'bar') {
             this.data['datasets'][0]['backgroundColor'] = this.generateChartColors(data['data']);
@@ -40,12 +40,13 @@ class GraphData {
     }
 
     async getAPIData() {
-        fetch(import.meta.env['VITE_API_URL'] + this.name)
+        return fetch(import.meta.env['VITE_API_URL'] + this.name)
             .then((response) => { return response.json() })
             .then((data) => { 
                 this.loaded = true;
                 this.init(data);
             })
+            .then(() => { return })
             .catch((err) => console.error(err))
     }
 
@@ -124,14 +125,17 @@ class GraphData {
         let color_scheme = this.getColorScheme();
         let scale = chroma.scale(color_scheme).colors(3);
 
-        console.log(scale);
-
         gradient.addColorStop(0, color_scheme[0]);
         // gradient.addColorStop(0.5, scale[1])
         gradient.addColorStop(0.5, color_scheme[1]);
         gradient.addColorStop(1, color_scheme[1]);
 
         return gradient;
+    }
+
+    getClients() {
+        console.log(this.data);
+        return this.data.datasets[0].data[0].client_list;
     }
 };
 

@@ -1,36 +1,160 @@
 {
     "label": "Billable hours by project",
     "chart_type": "pie",
-    "data": [
-        {"client":"Ford Motor Company","list_project_hours":[{"project":"GDIA Engagement","hours":2829.75},{"project":"Advanced Engineering PoC","hours":2.0}]},
-        {"client":"Usana","list_project_hours":[{"project":"Business Objects Migration","hours":2587.5},{"project":"Senior Technical Architect Resource","hours":980.25},{"project":"Initial Application Set Build","hours":426.75},{"project":"Program Management Mentoring","hours":112.0},{"project":"Template Design & Development","hours":108.5},{"project":"Executive App Discovery","hours":89.0},{"project":"Sales and Marketing Discovery","hours":22.25},{"project":"Initial Technical Consult","hours":13.0}]},
-        {"client":"Takata","list_project_hours":[{"project":"Quality","hours":2494.75},{"project":"Global Trace Database","hours":1866.75},{"project":"General Reporting 1","hours":767.0},{"project":"Global Traceability - 2 Plants","hours":144.0},{"project":"2-Factor Security","hours":37.75},{"project":"TM1","hours":1.0}]},
-        {"client":"Centric Consulting","list_project_hours":[{"project":"Vantiv - WebFocus Architect","hours":2220.0},{"project":"Fidelity - BI Architect","hours":389.75}]},
-        {"client":"Oakwood Technologies","list_project_hours":[{"project":"SpartanNash Initial Consult","hours":1548.5}]},
-        {"client":"Yum! Brands","list_project_hours":[{"project":"Ops Scorecard Phase 1","hours":800.5},{"project":"Pizza Hut Help Desk Phase 2 Discovery","hours":131.0},{"project":"Production Support","hours":2.0}]},
-        {"client":"WHM, LLC","list_project_hours":[{"project":"Long-term Analysis & Planning","hours":665.0},{"project":"BRE Full Service Reporting","hours":435.5},{"project":"BRE Select Service Reporting","hours":370.25},{"project":"Forecast Report","hours":351.75},{"project":"P&L Detail","hours":312.0},{"project":"Financial Grid Reporting","hours":171.25},{"project":"Solution Enhancement","hours":160.75},{"project":"Roadmap","hours":147.25},{"project":"P&L and Forecast Enhancements","hours":128.75},{"project":"8 Forecast metrics added to P&L (RFR0008)","hours":92.5},{"project":"v10.3","hours":82.5},{"project":"Mobile ECC","hours":70.75},{"project":"MicroStrategy Version 10","hours":36.25},{"project":"P&L Detail Enhancements (RFR0011)","hours":32.0},{"project":"Forecast Pyramid Enhancements (RFR0012)","hours":7.5},{"project":"Hosted Development Environment","hours":7.5},{"project":"Financial Grid Reporting Enhancements","hours":2.0}]},
-        {"client":"Dura Automotive Systems","list_project_hours":[{"project":"Financial & Opportunity Reporting","hours":594.75}]},
-        {"client":"CDK Global","list_project_hours":[{"project":"Retail Automotive Pilot","hours":485.75}]},
-        {"client":"StuyTown Property Services","list_project_hours":[{"project":"SPS Preliminary Work","hours":408.0}]},
-        {"client":"i2","list_project_hours":[{"project":"Cloud support","hours":363.5},{"project":"Digital Marketing App","hours":49.75},{"project":"Website Redesign","hours":47.0},{"project":"Automotive Retail Solution","hours":17.0},{"project":"Sales Showcase App","hours":2.75},{"project":"Project Management Reporting","hours":1.0}]},
-        {"client":"Beaumont","list_project_hours":[{"project":"Initial Engagement","hours":283.5},{"project":"Nurses' Mobile App","hours":267.25},{"project":"Qlik Sense Extension (Admissions, IPC)","hours":6.0}]},
-        {"client":"Palace Sports and Entertainment","list_project_hours":[{"project":"Production Support","hours":261.25},{"project":"2015-2016 Season","hours":57.25},{"project":"Hoops App","hours":53.5}]},
-        {"client":"Sandlot Solutions","list_project_hours":[{"project":"QA Analyst","hours":236.0},{"project":"Developer Support","hours":188.0},{"project":"Re-Admissions","hours":1.5}]},
-        {"client":"Phoenix Suns","list_project_hours":[{"project":"Player Engagement App","hours":181.0}]},
-        {"client":"BRE Hotels & Resorts","list_project_hours":[{"project":"2017 Migration & Hosting","hours":175.5}]},
-        {"client":"CloudFace","list_project_hours":[{"project":"Sales Prep","hours":163.5}]},
-        {"client":"Michigan First Credit Union","list_project_hours":[{"project":"Initial Discovery","hours":157.0}]},
-        {"client":"The HADA Group","list_project_hours":[{"project":"Production Support","hours":105.0}]},
-        {"client":"Micro Center","list_project_hours":[{"project":"v10 Upgrade","hours":80.5},{"project":"Attachment Dashboard Readiness","hours":3.5}]},
-        {"client":"Crains Communications","list_project_hours":[{"project":"Initial Discovery","hours":75.75}]},
-        {"client":"TONE","list_project_hours":[{"project":"Background Mode Implementation","hours":64.5},{"project":"iOS App Replication","hours":51.0}]},
-        {"client":"Cirrus Group LLC","list_project_hours":[{"project":"Insite Provider Design","hours":60.75}]},
-        {"client":"Volkswagen Group Canada Inc","list_project_hours":[{"project":"Dealer Traffic POC","hours":53.25},{"project":"TDI Bravo PoC","hours":18.0}]},
-        {"client":"Cloudera","list_project_hours":[{"project":"Amway Consult","hours":36.0}]},
-        {"client":"NetShape Technologies, Inc","list_project_hours":[{"project":"Power BI Support","hours":31.25}]},
-        {"client":"Curtis Hays Consulting, LLC","list_project_hours":[{"project":"Digital Marketing Platform","hours":19.5}]},
-        {"client":"Total Vending","list_project_hours":[{"project":"Weekly Driver Extract","hours":14.5}]},
-        {"client":"Amerisure Mutual Insurance Company, Inc","list_project_hours":[{"project":"Initial Engagement","hours":6.25}]},
-        {"client":"reach | influence","list_project_hours":[{"project":"Production application hosting(Non-Billab","hours":0.5}]}
-    ]
+    "data": [{
+        "client_list": [
+            "Takata",
+            "Usana",
+            "WHM, LLC",
+            "Ford Motor Company",
+            "Centric Consulting",
+            "Oakwood Technologies",
+            "Yum! Brands",
+            "Dura Automotive Systems",
+            "Beaumont",
+            "CDK Global",
+            "i2",
+            "Sandlot Solutions",
+            "Stuytown Property Solutions",
+            "Palace Sports and Entertainment",
+            "Phoenix Suns",
+            "BRE Hotels & Resorts",
+            "CloudFace",
+            "Michigan First Credit Union",
+            "TONE",
+            "The HADA Group",
+            "Micro Center",
+            "Crains Communications",
+            "Volkswagen Group Canada Inc",
+            "Cirrus Group LLC",
+            "Cloudera",
+            "NetShape Technologies, LLC",
+            "Curtis Hays Consulting, LLC",
+            "Total Vending",
+            "Amerisure Mutual Insurance Company, Inc",
+            "reach | influence"
+        ],
+        "dataset": {
+            "Ford Motor Company": {
+                "project_labels": ["GDIA Engagement", "Advanced Engineering PoC"], 
+                "hours": [2829.75, 2.0]
+            }, 
+            "Usana": {
+                "project_labels": ["Business Objects Migration", "Senior Technical Architect Resource", "Initial Application Set Build", "Program Management Mentoring", "Template Design & Development", "Executive App Discovery", "Sales and Marketing Discovery", "Initial Technical Consult"], 
+                "hours": [2587.5, 980.25, 426.75, 112.0, 108.5, 89.0, 22.25, 13.0]
+            },
+            "Takata": {
+                "project_labels": ["Quality", "Global Trace Database", "General Reporting 1", "Global Traceability - 2 Plants", "2-Factor Security", "TM1"],
+                "hours": [2494.75, 1866.75, 767.0, 144.0, 37.75, 1.0] 
+            },
+            "Centric Consulting": {
+                "project_labels": ["Vantiv - WebFocus Architect", "Fidelity - BI Architect"],
+                "hours": [2220.0, 389.75]
+            },
+            "Oakwood Technologies": {
+                "project_labels": ["SpartanNash Initial Consult"],
+                "hours": [1548.5]
+            },
+            "Yum! Brands": {
+                "project_labels": ["Ops Scorecard Phase 1", "Pizza Hut Help Desk Phase 2 Discovery", "Production Support"],
+                "hours": [800.5, 131.0, 2.0]
+            },
+            "WHM, LLC": {
+                "project_labels": ["Long-term Analysis & Planning", "BRE Full Service Reporting", "BRE Select Service Reporting", "Forecast Report", "P&L Detail", "Financial Grid Reporting", "Solution Enhancement", "Roadmap", "P&L and Forecast Enhancements", "8 Forecast metrics added to P&L (RFR0008)", "v10.3", "Mobile ECC", "MicroStrategy Version 10", "P&L Detail Enhancements (RFR0011)", "Forecast Pyramid Enhancements (RFR0012)", "Hosted Development Environment", "Financial Grid Reporting Enhancements"],
+                "hours": [665.0, 435.5, 370.25, 351.75, 312.0, 171.25, 160.75, 147.25, 128.75, 92.5, 82.5, 70.75, 36.25, 32.0, 7.5, 7.5, 2.0]
+            },
+            "Dura Automotive Systems": {
+                "list_project_hours": ["Financial & Opportunity Reporting"],
+                "hours": [594.75]
+            },
+            "CDK Global": {
+                "list_project_hours": ["Retail Automotive Pilot"],
+                "hours": [485.75]
+            },
+            "StuyTown Property Services": {
+                "list_project_hours": ["SPS Preliminary Work"],
+                "hours": [408.0]
+            },
+            "i2": {
+                "list_project_hours": ["Cloud support", "Digital Marketing App", "Website Redesign", "Automotive Retail Solution", "Sales Showcase App", "Project Management Reporting"],
+                "hours": [363.5, 49.75, 47.0, 17.0, 2.75, 1.0]
+            },
+            "Beaumont": {
+                "list_project_hours": ["Initial Engagement", "Nurses' Mobile App", "Qlik Sense Extension (Admissions, IPC)"],
+                "hours": [283.5, 267.25, 6.0]
+            },
+            "Palace Sports and Entertainment": {
+                "list_project_hours": ["Production Support", "2015-2016 Season", "Hoops App"],
+                "hours": [261.25, 57.25, 53.5]
+            },
+            "Sandlot Solutions": {
+                "list_project_hours": ["QA Analyst", "Developer Support", "Re-Admissions"],
+                "hours": [236.0, 188.0, 1.5]
+            },
+            "Phoenix Suns": {
+                "list_project_hours": ["Player Engagement App"],
+                "hours": [181.0]
+            },
+            "BRE Hotels & Resorts": {
+                "list_project_hours": ["2017 Migration & Hosting"],
+                "hours": [175.5]
+            }, 
+            "CloudFace": {
+                "list_project_hours": ["Sales Prep"],
+                "hours": [163.5]
+            },
+            "Michigan First Credit Union": {
+                "list_project_hours": ["Initial Discovery"],
+                "hours": [157.0]
+            },
+            "The HADA Group": {
+                "list_project_hours": ["Production Support"],
+                "hours": [105.0]
+            },
+            "Micro Center": {
+                "list_project_hours": ["v10 Upgrade", "Attachment Dashboard Readiness"],
+                "hours": [80.5, 3.5]
+            },
+            "Crains Communications": {
+                "list_project_hours": ["Initial Discovery"],
+                "hours": [75.75]
+            },
+            "TONE": {
+                "list_project_hours": ["Background Mode Implementation", "iOS App Replication"],
+                "hours": [64.5, 51.0]
+            },
+            "Cirrus Group LLC": {
+                "list_project_hours": ["Insite Provider Design"],
+                "hours": [60.75]
+            },
+            "Volkswagen Group Canada Inc": {
+                "list_project_hours": ["Dealer Traffic POC", "TDI Bravo PoC"],
+                "hours": [53.25, 18.0]
+            },
+            "Cloudera": {
+                "list_project_hours": ["Amway Consult"],
+                "hours": [36.0]
+            },
+            "NetShape Technologies, Inc": {
+                "list_project_hours": ["Power BI Support"],
+                "hours": [31.25]
+            },
+            "Curtis Hays Consulting, LLC": {
+                "list_project_hours": ["Digital Marketing Platform"],
+                "hours": [19.5]
+            },
+            "Total Vending": {
+                "list_project_hours": ["Weekly Driver Extract"],
+                "hours": [14.5]
+            },
+            "Amerisure Mutual Insurance Company, Inc": {
+                "list_project_hours": ["Initial Engagement"],
+                "hours": [6.25]
+            },
+            "reach | influence": {
+                "list_project_hours": ["Production application hosting(Non-Billable)"],
+                "hours": [0.5]
+            }
+        }
+    }]
 }

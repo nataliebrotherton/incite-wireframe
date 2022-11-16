@@ -2,6 +2,7 @@
 // Controls rendering graph sections and cards
 import Graph from './Graph.vue'
 
+
 export default {
     data() {
         return {
@@ -39,7 +40,7 @@ export default {
     <div class="graph-section" v-for="section in graphDisplayData">
         <h3 class="title">{{section["title"]}}</h3>
         <div class="graph-cards-container">
-            <div class="card" v-for="graphName in section.graphNames">
+            <div v-for="graphName in section.graphNames" class="card" :class="isDropdown(graphName)">
                 <Graph :graphName="graphName" :render-dropdown="isDropdown(graphName)" />
             </div>
         </div>
