@@ -25,7 +25,31 @@ export default {
         return {
             chartOptions: {
                 indexAxis: 'y',
-            }              
+                elements: {
+                    bar: {
+                        borderRadius: 20,
+                        barThickness: 20
+                    }
+                },
+                scales: {
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    datalabels: {
+                        anchor: 'end',
+                        clamp: false,
+                        align: 'start',
+                        color: '#fff',
+                        formatter: Math.round,
+                        font: {
+                            size: 10,
+                            weight: 500
+                        }
+                    }
+                }
+            }
         }
     }
 }

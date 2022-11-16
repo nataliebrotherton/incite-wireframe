@@ -38,7 +38,19 @@ export default {
     },
     data() {
         return {
-            chartData: this.graphData?.getData()
+            chartData: this.graphData?.getData(),
+            chartOptions: {
+                elements: {
+                    line: {
+                        borderCapStyle: 'round',
+                        borderJoinStyle: 'round',
+                        tension: 0.2
+                    },
+                    point: {
+                        radius: 0
+                    },
+                }
+            }
         }
     },
     methods: {
