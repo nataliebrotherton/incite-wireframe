@@ -12,6 +12,7 @@ export default {
 
 <template>
   <main>
+    <p class="main title">Analysis of 2016-17 TSheets Data</p>
     <Overview />
     <GraphView />
   </main>
