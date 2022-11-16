@@ -38,9 +38,9 @@ export default {
 
 <template>
     <div class="graph-section" v-for="section in graphDisplayData">
-        <h3 class="title">{{section["title"]}}</h3>
+        <p class="section-title">{{section["title"]}}</p>
         <div class="graph-cards-container">
-            <div v-for="graphName in section.graphNames" class="card" :class="isDropdown(graphName)">
+            <div v-for="graphName in section.graphNames" class="" :class="isDropdown(graphName)">
                 <Graph :graphName="graphName" :render-dropdown="isDropdown(graphName)" />
             </div>
         </div>
@@ -69,10 +69,6 @@ export default {
         align-items: center;
     }
 
-    .title {
-        font-size: 48px;
-        color: var(--text-title-2);
-    }
 }
 
 </style>

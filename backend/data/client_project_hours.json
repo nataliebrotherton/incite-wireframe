@@ -64,95 +64,95 @@
                 "hours": [665.0, 435.5, 370.25, 351.75, 312.0, 171.25, 160.75, 147.25, 128.75, 92.5, 82.5, 70.75, 36.25, 32.0, 7.5, 7.5, 2.0]
             },
             "Dura Automotive Systems": {
-                "list_project_hours": ["Financial & Opportunity Reporting"],
+                "project_labels": ["Financial & Opportunity Reporting"],
                 "hours": [594.75]
             },
             "CDK Global": {
-                "list_project_hours": ["Retail Automotive Pilot"],
+                "project_labels": ["Retail Automotive Pilot"],
                 "hours": [485.75]
             },
             "StuyTown Property Services": {
-                "list_project_hours": ["SPS Preliminary Work"],
+                "project_labels": ["SPS Preliminary Work"],
                 "hours": [408.0]
             },
             "i2": {
-                "list_project_hours": ["Cloud support", "Digital Marketing App", "Website Redesign", "Automotive Retail Solution", "Sales Showcase App", "Project Management Reporting"],
+                "project_labels": ["Cloud support", "Digital Marketing App", "Website Redesign", "Automotive Retail Solution", "Sales Showcase App", "Project Management Reporting"],
                 "hours": [363.5, 49.75, 47.0, 17.0, 2.75, 1.0]
             },
             "Beaumont": {
-                "list_project_hours": ["Initial Engagement", "Nurses' Mobile App", "Qlik Sense Extension (Admissions, IPC)"],
+                "project_labels": ["Initial Engagement", "Nurses' Mobile App", "Qlik Sense Extension (Admissions, IPC)"],
                 "hours": [283.5, 267.25, 6.0]
             },
             "Palace Sports and Entertainment": {
-                "list_project_hours": ["Production Support", "2015-2016 Season", "Hoops App"],
+                "project_labels": ["Production Support", "2015-2016 Season", "Hoops App"],
                 "hours": [261.25, 57.25, 53.5]
             },
             "Sandlot Solutions": {
-                "list_project_hours": ["QA Analyst", "Developer Support", "Re-Admissions"],
+                "project_labels": ["QA Analyst", "Developer Support", "Re-Admissions"],
                 "hours": [236.0, 188.0, 1.5]
             },
             "Phoenix Suns": {
-                "list_project_hours": ["Player Engagement App"],
+                "project_labels": ["Player Engagement App"],
                 "hours": [181.0]
             },
             "BRE Hotels & Resorts": {
-                "list_project_hours": ["2017 Migration & Hosting"],
+                "project_labels": ["2017 Migration & Hosting"],
                 "hours": [175.5]
             }, 
             "CloudFace": {
-                "list_project_hours": ["Sales Prep"],
+                "project_labels": ["Sales Prep"],
                 "hours": [163.5]
             },
             "Michigan First Credit Union": {
-                "list_project_hours": ["Initial Discovery"],
+                "project_labels": ["Initial Discovery"],
                 "hours": [157.0]
             },
             "The HADA Group": {
-                "list_project_hours": ["Production Support"],
+                "project_labels": ["Production Support"],
                 "hours": [105.0]
             },
             "Micro Center": {
-                "list_project_hours": ["v10 Upgrade", "Attachment Dashboard Readiness"],
+                "project_labels": ["v10 Upgrade", "Attachment Dashboard Readiness"],
                 "hours": [80.5, 3.5]
             },
             "Crains Communications": {
-                "list_project_hours": ["Initial Discovery"],
+                "project_labels": ["Initial Discovery"],
                 "hours": [75.75]
             },
             "TONE": {
-                "list_project_hours": ["Background Mode Implementation", "iOS App Replication"],
+                "project_labels": ["Background Mode Implementation", "iOS App Replication"],
                 "hours": [64.5, 51.0]
             },
             "Cirrus Group LLC": {
-                "list_project_hours": ["Insite Provider Design"],
+                "project_labels": ["Insite Provider Design"],
                 "hours": [60.75]
             },
             "Volkswagen Group Canada Inc": {
-                "list_project_hours": ["Dealer Traffic POC", "TDI Bravo PoC"],
+                "project_labels": ["Dealer Traffic POC", "TDI Bravo PoC"],
                 "hours": [53.25, 18.0]
             },
             "Cloudera": {
-                "list_project_hours": ["Amway Consult"],
+                "project_labels": ["Amway Consult"],
                 "hours": [36.0]
             },
             "NetShape Technologies, Inc": {
-                "list_project_hours": ["Power BI Support"],
+                "project_labels": ["Power BI Support"],
                 "hours": [31.25]
             },
             "Curtis Hays Consulting, LLC": {
-                "list_project_hours": ["Digital Marketing Platform"],
+                "project_labels": ["Digital Marketing Platform"],
                 "hours": [19.5]
             },
             "Total Vending": {
-                "list_project_hours": ["Weekly Driver Extract"],
+                "project_labels": ["Weekly Driver Extract"],
                 "hours": [14.5]
             },
             "Amerisure Mutual Insurance Company, Inc": {
-                "list_project_hours": ["Initial Engagement"],
+                "project_labels": ["Initial Engagement"],
                 "hours": [6.25]
             },
             "reach | influence": {
-                "list_project_hours": ["Production application hosting(Non-Billable)"],
+                "project_labels": ["Production application hosting(Non-Billable)"],
                 "hours": [0.5]
             }
         }

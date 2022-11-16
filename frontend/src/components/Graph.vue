@@ -39,7 +39,8 @@ export default {
         return {
             label: '',
             graphData: new GraphData(this.graphName),
-            clientData: []
+            clientData: [],
+            selectedClient: ''
         }
     },
     methods: {
@@ -52,9 +53,9 @@ export default {
         .then(() => {
             if (this.renderDropdown) {
                 this.clientData = this.getClients();
+                this.selectedClient = this.clientData[0];
             }
         })
-
     },
 
     components: {
@@ -68,22 +69,42 @@ export default {
 <template>
     <div class="dropdown" v-if="renderDropdown">
         <label for="client">View projects by client</label>       
-        <select name="client" id="client">
+        <select v-model="selectedClient" class="card" name="client" id="client">
             <option v-for="client in clientData" :label="client">
                 {{ client }}
             </option>
         </select>
     </div>
-    <div :id="graphName" class="graph">
-        <p class="label">{{ graphData.getLabel() }}</p>
+    <div :id="graphName" class="graph card">
+        <p class="label">
+            {{graphData.getLabel()}}<span v-if="renderDropdown">: {{ selectedClient }}</span>
+        </p>
         <BarChart v-if="graphData.isBar()" :graph-data="graphData" />
         <LineChart v-else-if="graphData.isLine()" :graph-data="graphData" />
-        <PieChart v-else-if="graphData.isPie()" :graph-data="graphData" />
+        <PieChart v-else-if="graphData.isPie()" :graph-data="graphData" :client="selectedClient" />
     </div>
 
 </template>
 
 <style lang="scss">
+    .dropdown {
+        margin: 11px;
+
+        label {
+            color: var(--text-label-1);
+        }
+
+        select {
+            color: var(--text-title-2);
+            font-weight: var(--font-weight);
+            margin-left: 10px;
+            padding: 5px;
+            width: auto;
+            border: none;
+            font-family: var(--system-font);
+        }
+    }
+
     .graph {
         width: 100%;
 
@@ -91,8 +112,22 @@ export default {
         flex-direction: column;
         align-items: center;
 
+        margin-right: 10px;
+        padding: 20px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+        width: 600px;
+        height: 400px;
+
         .label {
-            font-size: 32;
+            // font-size: 25px;
+            font-size: clamp(20px, 25px, 30px);
+            margin: 5px;
+        }
+
+        &#client_project_hours {
+            height: 350px;
         }
     }
 </style>

@@ -19,20 +19,24 @@ class GraphData {
     }
 
     async init(data: object) {
-        this.data = {
-            axis: 'y',
-            datasets: [{
-                data: data['data'],
-            }],
-            labels: data['labels'],
-            
-        };
-
         this.type = data['chart_type'];
 
+        if (this.type == 'pie') {
+            this.data = data['data'];
+        } else {
+            this.data = {
+                axis: 'y',
+                datasets: [{
+                    data: data['data'],
+                }],
+                labels: data['labels'],
+                
+            };
+        }
+
         // generate gradient bars for bar graphs
-        if (this.type === 'bar') {
-            this.data['datasets'][0]['backgroundColor'] = this.generateChartColors(data['data']);
+        if (this.isBar()) {
+            this.data['datasets'][0]['backgroundColor'] = this.generateChartColors(data['data'].length);
         }
 
         this.label = data['label'];
@@ -78,6 +82,20 @@ class GraphData {
         return this.data;
     }
 
+    getClientData(client : string) {
+        if (!client || client.length <= 0 || !this.isPie()) return {};
+        console.log(client.length);
+        let clientData = this.data[0].dataset[client];
+        let data = {
+            labels: clientData['project_labels'],
+            datasets: [{
+                data: clientData['hours'],
+                backgroundColor: this.generateChartColors(clientData['hours'].length)
+            }]
+        }
+        return data;
+    }
+
     isLoaded() {
         return this.loaded;
     }
@@ -109,10 +127,10 @@ class GraphData {
 
     }
 
-    generateChartColors(data: any) {
+    generateChartColors(dataLength: number) {
         let color_scheme = this.getColorScheme();
 
-        return chroma.scale(color_scheme).gamma(0.5).colors(data.length);
+        return chroma.scale(color_scheme).gamma(0.5).colors(dataLength);
         
     }
 
@@ -134,8 +152,7 @@ class GraphData {
     }
 
     getClients() {
-        console.log(this.data);
-        return this.data.datasets[0].data[0].client_list;
+        return this.data[0].client_list;
     }
 };
 
