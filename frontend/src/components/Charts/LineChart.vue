@@ -6,11 +6,6 @@ import { ref, onMounted } from 'vue'
 
 ChartJS.register(Title, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement)
 
-onMounted(() => {
-    let chart = ChartJS.getChart('month_billable_hours');
-    console.log(chart);
-})
-
 export default {
     props: {
         graphData: GraphData,
@@ -25,10 +20,6 @@ export default {
     },
     components: {
         Line
-    },
-    updated: function() {
-        let chart = ChartJS.getChart(this.graphData?.getName());
-        console.log(chart);
     },
     mounted() {
         let gradient = this.generateLineGradient();
@@ -49,6 +40,22 @@ export default {
                     point: {
                         radius: 0
                     },
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            callback: function(value, index, ticks) {
+                                if (!index || !((index + 1) % 6)) return this.getLabelForValue(value);
+                            }
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            callback: function(value, index, ticks) {
+                                if (index % 2) return this.getLabelForValue(value);
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -69,8 +76,8 @@ export default {
 <template>
     <Line 
         v-if="graphData?.isLoaded()"
-        :ref="getChartId()"
         :chart-data="chartData"
+        :chart-options="chartOptions"
         :chart-id="getChartId()"
         :id="graphData?.getName()"
         class="chart-container line"
