@@ -23,7 +23,7 @@
 #header_image {
   background-image:
   linear-gradient(to bottom, #00000000, var(--color-background)),
-  url('../../public/images/header.png');
+  url('../../images/header.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
