@@ -39,8 +39,8 @@ export default {
 <template>
     <div class="graph-section" v-for="section in graphDisplayData">
         <p class="section-title">{{section["title"]}}</p>
-        <div class="graph-cards-container">
-            <div v-for="graphName in section.graphNames" class="" :class="isDropdown(graphName)">
+        <div class="graph-cards-container" :id="section['title']">
+            <div v-for="graphName in section.graphNames" :id="graphName" :class="isDropdown(graphName)">
                 <Graph :graphName="graphName" :render-dropdown="isDropdown(graphName)" />
             </div>
         </div>
@@ -53,8 +53,27 @@ export default {
 .graph-section {
 
     .graph-cards-container {
-        display: flex;
-        flex-direction: row;
+        // display: flex;
+        // flex-direction: row;
+        display: grid;
+        
+        &#Client\ Data {
+            grid-template-columns: [first] 50% [second] 50%;
+        }
+
+        &#Timelog\ Data {
+            grid-template-columns: [first] 50% [second] 50%;
+            grid-template-areas: 
+                "pto revenue"
+                "employee employee"
+            ;
+
+            #employee_billable_hours {
+                grid-area: employee;
+            }
+        }
+
+
     }
     .card {
         margin-right: 10px;
@@ -67,8 +86,11 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+
     }
 
 }
+
 
 </style>

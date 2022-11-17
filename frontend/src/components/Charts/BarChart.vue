@@ -3,8 +3,10 @@
 import GraphData from '../GraphData';
 import { Bar } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+ChartJS.register(ChartDataLabels);
 
 export default {
     props: {
@@ -20,6 +22,19 @@ export default {
     },
     components: {
         Bar
+    },
+    mounted() {
+        let ctx = document.getElementById(this.getChartId()).getContext('2d');
+        this.chartOptions.plugins.datalabels.anchor = (ctx : any) => {
+            const val = ctx.parsed;
+            const idx = ctx.dataIndex;
+            return 'end';
+        }
+    },
+    methods: {
+        getChartId() {
+            return this.graphData?.getName()+'-chart';
+        }
     },
     data() {
         return {
@@ -49,7 +64,8 @@ export default {
                         }
                     }
                 }
-            }
+            },
+            width: this.graphData?.getName() == 'employee_billable_hours' ? 1150 : 500
         }
     }
 }
@@ -60,7 +76,9 @@ export default {
     <Bar 
         v-if="graphData?.isLoaded()"
         :chart-data="graphData?.getData()"
-        :chart-id="graphData?.getName()"
+        :chart-id="getChartId()"
+        :id="graphData?.getName()"
+        class="chart-container bar"
         :chart-options="chartOptions"
         :width="width"
         :height="height"

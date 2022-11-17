@@ -31,6 +31,7 @@ export default {
 </script>
 
 <template>
+    <p class="section-title">Overview</p>
     <div id="overview">
         <div class="card" v-for="(data, id) in overviewData" >
             <p class="label">{{ data['label'] }}</p>
@@ -41,45 +42,41 @@ export default {
 
 </template>
 
-<style>
+<style lang="scss">
 #overview {
     display: flex;
     flex-direction: row;
+
+    .card {
+        width: 239px;
+        height: 223px;
+        margin-right: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+
+        .label {
+            font-size: 28px;
+            color: var(--text-title-2);
+            white-space: nowrap;
+        }
+
+        .value {
+            white-space: normal;
+            width: 239px;
+            font-size: 2rem;
+            text-align: center;
+            color: var(--overview-text-highlight);
+        }
+
+        .hours {
+            font-size: 18px;
+            color: var(--text-title-3);
+        }
+    }
 }
 
-#overview .card {
-    width: 239px;
-    height: 223px;
-    margin-right: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
 
-#overview .card p {
-    font-family: SF Pro;
-    font-weight: bold;
-}
-
-.label {
-    font-size: 28px;
-    color: var(--text-title-2);
-    white-space: nowrap;
-}
-
-.value {
-    white-space: normal;
-    width: 239px;
-    font-size: 50px;
-    font-size: 5vw;
-    text-align: center;
-    color: var(--overview-text-highlight);
-}
-
-.hours {
-    font-size: 18px;
-    color: var(--text-title-3);
-}
 </style>
