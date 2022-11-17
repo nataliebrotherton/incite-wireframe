@@ -1,9 +1,12 @@
 <script lang="ts">
+// Controls rendering and styling Pie chart
 import GraphData from '../GraphData';
 import { Doughnut } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, CategoryScale, LinearScale, ArcElement } from 'chart.js'
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 ChartJS.register(Title, Tooltip, Legend, CategoryScale, LinearScale, ArcElement)
+ChartJS.register(ChartDataLabels);
 
 export default {
     props: {
@@ -26,7 +29,13 @@ export default {
             chartOptions: {
                 plugins: {
                     datalabels: {
-                        anchor: 'end'
+                        anchor: 'center',
+                        clamp: true,
+                        align: 'start',
+                        visibility: true,
+                        font: {
+                            size: 10
+                        }
                     }
                 }
             },
@@ -39,9 +48,6 @@ export default {
     watch: {
         client: {
             handler(newVal, oldVal) {
-                console.log('watch');
-                console.log(newVal + ' ' + newVal.length);
-                console.log(oldVal + ' ' + oldVal.length);
                 if (newVal.length > 0) {
                     this.chartData = this.getClientData();
                 }
