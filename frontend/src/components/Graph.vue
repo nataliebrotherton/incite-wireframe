@@ -129,5 +129,10 @@ export default {
         &#client_project_hours {
             height: 350px;
         }
+
+        &#employee_billable_hours {
+            margin-top: 15px;
+            width: 1225px;
+        }
     }
 </style>
